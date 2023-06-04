@@ -1,0 +1,9 @@
+<form (submit)="criaAluno()">
+    <mat-form-field>
+      <input [(ngModel)]="nomeAluno" name="nomeAluno" matInput placeholder="Nome Aluno">
+    </mat-form-field>
+    <mat-form-field>
+      <input [(ngModel)]="matricula" name="matricula" matInput placeholder="matricula" type="number">
+    </mat-form-field>
+    <button mat-raised-button color="primary">Cadastrar Aluno</button>
+  </form>

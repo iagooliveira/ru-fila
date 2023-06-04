@@ -1,0 +1,11 @@
+.container-menu {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.botao-menu{
+    margin-left: 24px;
+}
