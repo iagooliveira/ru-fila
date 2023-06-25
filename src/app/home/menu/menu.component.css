@@ -6,6 +6,10 @@
     justify-content: space-between;
 }
 
-.botao-menu{
+.botao-menu {
     margin-left: 24px;
+}
+
+span {
+    cursor: pointer;
 }

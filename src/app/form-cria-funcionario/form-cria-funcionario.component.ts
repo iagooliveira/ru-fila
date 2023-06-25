@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormCriaFuncionarioComponent implements OnInit {
 
-  constructor() { }
+  nomeFuncionario: string;
+  codigo: number;
 
-  ngOnInit(): void {
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  criaFuncionario(): void {
+    console.log('teste');
   }
 
 }

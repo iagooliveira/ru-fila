@@ -8,8 +8,10 @@ import { IDadosRestaurante } from '../Interfaces/tela-inicial/Restaurante/IDados
 })
 export class TelaInicialComponent implements OnInit {
   resDadosRestaurante: IDadosRestaurante = {
-    nome: 'RU Ondia',
+    nome: 'RU Ondina',
     localizacao: 'Ondina',
+    posicaoAtual: 30,
+    suaPosicao: 50,
   };
 
   constructor() {}

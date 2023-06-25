@@ -1,1 +1,9 @@
-<p>form-cria-funcionario works!</p>
+<form (submit)="criaFuncionario()">
+  <mat-form-field>
+    <input [(ngModel)]="nomeFuncionario" name="nomeFuncionario" matInput placeholder="Nome Funcionario">
+  </mat-form-field>
+  <mat-form-field>
+    <input [(ngModel)]="codigo" name="codigo" matInput placeholder="codigo" type="number">
+  </mat-form-field>
+  <button mat-raised-button color="primary">Cadastrar Funcionário</button>
+</form>
