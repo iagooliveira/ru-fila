@@ -1,6 +1,7 @@
 .form-container {
-  margin-top: 50px;
   max-width: 350px;
+  margin: 0 auto;
+  margin-top: 50px;
 }
 
 form {

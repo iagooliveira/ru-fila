@@ -12,6 +12,7 @@ export class TelaInicialComponent implements OnInit {
     localizacao: 'Ondina',
     posicaoAtual: 30,
     suaPosicao: 50,
+    id: 10,
   };
 
   constructor() {}

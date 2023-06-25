@@ -3,4 +3,5 @@ export interface IDadosRestaurante {
   localizacao: string;
   posicaoAtual: number;
   suaPosicao: number;
+  id: number;
 }

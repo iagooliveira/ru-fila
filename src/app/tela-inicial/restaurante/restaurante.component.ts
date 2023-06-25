@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IDadosRestaurante } from 'src/app/Interfaces/tela-inicial/Restaurante/IDadosRestaurante';
 
 @Component({
@@ -7,10 +8,15 @@ import { IDadosRestaurante } from 'src/app/Interfaces/tela-inicial/Restaurante/I
   styleUrls: ['./restaurante.component.css'],
 })
 export class RestauranteComponent implements OnInit {
+  constructor(private route: Router) {}
+
   @Input()
   dadosRestaurante: IDadosRestaurante;
 
-  constructor() {}
 
   ngOnInit(): void {}
+
+  redirecionaParaFila(idRestaurante: number): void {
+    void this.route.navigate(['entrar-fila', idRestaurante]);
+  }
 }
