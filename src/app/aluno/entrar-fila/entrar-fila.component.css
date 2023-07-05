@@ -53,12 +53,14 @@
   /* justify-content: space-between; */
 }
 
-.logo-ufba {
+/* .logo-ufba {
   margin-top: -5rem;
   width: 13rem;
-}
+} */
 
 .logo-ruFila {
+  margin-top: -7rem;
+
   width: 13rem;
 }
 
@@ -75,9 +77,8 @@
   border-radius: 0.6rem;
   width: 15rem;
   height: 3rem;
-  color: #FEFEFE;
+  color: #fefefe;
 
   font-family: "Poppins";
   line-width: 3rem;
-  
 }

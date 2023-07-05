@@ -1,0 +1,37 @@
+<mat-toolbar class="toolbar">
+  <!-- <div class="container container-menu" id="container-menu">
+    <span (click)="rotaTelaPrincipal()" >ru-fila</span>
+        
+    <div class="container" >
+        <button mat-raised-button (click)="rotaCriaFuncionario()" >Cadastrar Funcionário</button>
+        <button mat-raised-button class="botao-menu"  (click)="rotaCriaAluno()">Cadastrar Aluno</button>
+    </div>
+        
+    </div> -->
+  <img class="img-toolbar" src="assets/header.png" alt="" />
+</mat-toolbar>
+
+<section class="section-principal">
+  <div class="container-imagem-logo">
+    <!-- <img class="logo-ufba" src="assets/logo-ufba.png" alt="" /> -->
+    <img class="logo-ruFila" src="assets/logo.png" alt="" />
+    <!-- <img class="imagem-aluno-chapeu" src="assets/aluno-chapeu.png" alt="" /> -->
+
+    <mat-form-field appearance="fill" class="fild-container">
+      <mat-label class="label-select-restaurante">Toppings</mat-label>
+      <mat-select class="select-restaurante" [formControl]="toppings">
+        <mat-option
+          class="option-restaurante"
+          *ngFor="let topping of toppingList"
+          [value]="topping"
+          >{{ topping }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="container-numeroFila"></div>
+</section>
+
+<footer class="container-footer">
+  <img class="imagem-footer" src="assets/footer.png" alt="" />
+</footer>

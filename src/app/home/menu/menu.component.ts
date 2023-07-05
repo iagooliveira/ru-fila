@@ -16,7 +16,7 @@ export class MenuComponent implements OnInit {
   }
 
   rotaCriaAluno(): void {
-    void this.route.navigate(['cadastra-aluno']);
+    void this.route.navigate(['aluno-home']);
   }
 
   rotaTelaPrincipal(): void {

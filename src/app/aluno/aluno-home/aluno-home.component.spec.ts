@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TelaInicialComponent } from './tela-inicial.component';
+import { AlunoHomeComponent } from './aluno-home.component';
 
-describe('TelaInicialComponent', () => {
-  let component: TelaInicialComponent;
-  let fixture: ComponentFixture<TelaInicialComponent>;
+describe('AlunoHomeComponent', () => {
+  let component: AlunoHomeComponent;
+  let fixture: ComponentFixture<AlunoHomeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TelaInicialComponent ]
+      declarations: [ AlunoHomeComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TelaInicialComponent);
+    fixture = TestBed.createComponent(AlunoHomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
