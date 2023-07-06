@@ -19,6 +19,7 @@ import { MatCardModule } from '@angular/material/card';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './home/menu/menu.component';
 import { AlunoModule } from './aluno/aluno.module';
+import { RestauranteModule } from './restaurante/restaurante.module';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { AlunoModule } from './aluno/aluno.module';
     MatDatepickerModule,
     MatNativeDateModule,
     MatToolbarModule,
-    AlunoModule
+    AlunoModule,
+    RestauranteModule
   ],
   providers: [],
   bootstrap: [AppComponent],
