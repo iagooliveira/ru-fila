@@ -16,7 +16,10 @@ export class HomeRestauranteComponent implements OnInit {
   }
 
   rotaAreaFuncionario() {
-    //void this.route.navigate(['cadastrar-funcionario']);
     void this.route.navigate(['area-funcionario']);
+  }
+
+  rotaAreaRestaurante() {
+    void this.route.navigate(['area-restaurante']);
   }
 }

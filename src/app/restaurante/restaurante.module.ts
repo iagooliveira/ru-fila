@@ -21,6 +21,9 @@ import { RestauranteRoutingModule } from './restaurante-routing.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CadastrarFuncionarioComponent } from './area-funcionario/cadastrar-funcionario/cadastrar-funcionario.component';
 import { AreaFuncionarioComponent } from './area-funcionario/area-funcionario.component';
+import { AreaRestauranteComponent } from './home-restaurante/area-restaurante/area-restaurante.component';
+import { CadastrarRestauranteComponent } from './home-restaurante/area-restaurante/cadastrar-restaurante/cadastrar-restaurante.component';
+import { VisualizarRestaurantesComponent } from './home-restaurante/area-restaurante/visualizar-restaurantes/visualizar-restaurantes.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { AreaFuncionarioComponent } from './area-funcionario/area-funcionario.co
     HomeRestauranteComponent,
     CadastrarFuncionarioComponent,
     AreaFuncionarioComponent,
+    AreaRestauranteComponent,
+    CadastrarRestauranteComponent,
+    VisualizarRestaurantesComponent,
   ],
   imports: [
     CommonModule,
