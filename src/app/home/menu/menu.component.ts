@@ -11,10 +11,6 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  rotaCriaFuncionario(): void {
-    void this.route.navigate(['cadastra-funcionario']);
-  }
-
   rotaCriaAluno(): void {
     void this.route.navigate(['aluno-home']);
   }
