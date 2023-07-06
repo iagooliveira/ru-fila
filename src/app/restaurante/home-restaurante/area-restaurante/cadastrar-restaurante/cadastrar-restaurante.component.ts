@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CadastrarRestauranteService } from '../services/cadastrar-restaurante/cadastrar-restaurante.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar-restaurante',
@@ -9,7 +10,8 @@ import { CadastrarRestauranteService } from '../services/cadastrar-restaurante/c
 export class CadastrarRestauranteComponent implements OnInit {
   nome: string;
   constructor(
-    private cadastrarRestauranteService: CadastrarRestauranteService
+    private cadastrarRestauranteService: CadastrarRestauranteService,
+    private route: Router
   ) {}
 
   ngOnInit(): void {}
@@ -20,5 +22,9 @@ export class CadastrarRestauranteComponent implements OnInit {
       .subscribe((res) => {
         console.log(res);
       });
+  }
+
+  voltar() {
+    void this.route.navigate(['area-restaurante']);
   }
 }
