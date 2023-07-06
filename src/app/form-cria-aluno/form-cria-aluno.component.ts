@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormAlunoService } from './form-aluno.service';
 
 @Component({
   selector: 'app-form-cria-aluno',
@@ -9,11 +10,13 @@ export class FormCriaAlunoComponent implements OnInit {
   nomeAluno: string;
   matricula: number;
 
-  constructor() {}
+  constructor(private alunoService:FormAlunoService) {}
 
   ngOnInit(): void {}
 
   criaAluno(): void {
-    console.log('teste');
+    this.alunoService.criarAluno('aaaaaaaaaaaaaaaaaaaa').subscribe(()=> {
+      console.log('teste')
+    } )
   }
 }
