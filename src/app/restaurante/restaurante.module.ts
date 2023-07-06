@@ -19,14 +19,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { HomeRestauranteComponent } from './home-restaurante/home-restaurante.component';
 import { RestauranteRoutingModule } from './restaurante-routing.module';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { CadastrarFuncionarioComponent } from './cadastrar-funcionario/cadastrar-funcionario.component';
-
+import { CadastrarFuncionarioComponent } from './area-funcionario/cadastrar-funcionario/cadastrar-funcionario.component';
+import { AreaFuncionarioComponent } from './area-funcionario/area-funcionario.component';
 
 @NgModule({
   declarations: [
     DivulgarCardapioComponent,
     HomeRestauranteComponent,
-     CadastrarFuncionarioComponent
+    CadastrarFuncionarioComponent,
+    AreaFuncionarioComponent,
   ],
   imports: [
     CommonModule,
@@ -50,7 +51,7 @@ import { CadastrarFuncionarioComponent } from './cadastrar-funcionario/cadastrar
 
     FormsModule,
     ReactiveFormsModule,
-    MatSnackBarModule, 
-  ]
+    MatSnackBarModule,
+  ],
 })
-export class RestauranteModule { }
+export class RestauranteModule {}

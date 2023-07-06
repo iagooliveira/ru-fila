@@ -1,12 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+import {
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar-funcionario',
   templateUrl: './cadastrar-funcionario.component.html',
-  styleUrls: ['./cadastrar-funcionario.component.css']
+  styleUrls: ['./cadastrar-funcionario.component.css'],
 })
 export class CadastrarFuncionarioComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'start';
@@ -21,11 +25,10 @@ export class CadastrarFuncionarioComponent implements OnInit {
     'Sausage',
     'Tomato',
   ];
-  
-  constructor(private snackBar: MatSnackBar, private route: Router) { }
 
-  ngOnInit(): void {
-  }
+  constructor(private snackBar: MatSnackBar, private route: Router) {}
+
+  ngOnInit(): void {}
 
   openSnackBar() {
     this.snackBar.open('Colaborador cadastrado com sucesso !', 'x', {
@@ -40,5 +43,4 @@ export class CadastrarFuncionarioComponent implements OnInit {
     this.openSnackBar();
     void this.route.navigate(['home-restaurante']);
   }
-
 }
