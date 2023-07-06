@@ -14,4 +14,8 @@ export class HomeRestauranteComponent implements OnInit {
   rotaDivulgaCardapio() {
     void this.route.navigate(['divulgar-cardapio']);
   }
+
+  rotaCadastrarFuncionario() {
+    void this.route.navigate(['cadastrar-funcionario']);
+  }
 }
