@@ -1,24 +1,15 @@
 <mat-toolbar class="toolbar">
-  <!-- <div class="container container-menu" id="container-menu">
-    <span (click)="rotaTelaPrincipal()" >ru-fila</span>
-        
-    <div class="container" >
-        <button mat-raised-button (click)="rotaCriaFuncionario()" >Cadastrar Funcionário</button>
-        <button mat-raised-button class="botao-menu"  (click)="rotaCriaAluno()">Cadastrar Aluno</button>
-    </div>
-        
-    </div> -->
   <img class="img-toolbar" src="assets/header.png" alt="" />
 </mat-toolbar>
 
 <section class="section-principal">
   <div class="container-imagem-logo">
-    <!-- <img class="logo-ufba" src="assets/logo-ufba.png" alt="" /> -->
     <img class="logo-ruFila" src="assets/logo.png" alt="" />
-    <!-- <img class="imagem-aluno-chapeu" src="assets/aluno-chapeu.png" alt="" /> -->
+  </div>
 
+  <div class="container-selects">
     <mat-form-field appearance="fill" class="fild-container">
-      <mat-label class="label-select-restaurante">Toppings</mat-label>
+      <mat-label class="label-select-restaurante">Restaurente</mat-label>
       <mat-select class="select-restaurante" [formControl]="toppings">
         <mat-option
           class="option-restaurante"
@@ -28,8 +19,29 @@
         >
       </mat-select>
     </mat-form-field>
+
+    <mat-form-field appearance="fill" class="fild-container">
+      <mat-label class="label-select-restaurante">Almoço</mat-label>
+      <mat-select class="select-restaurante" [formControl]="toppings">
+        <mat-option
+          class="option-restaurante"
+          *ngFor="let topping of toppingList"
+          [value]="topping"
+          >{{ topping }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+
+    <button class="btn-cardapio" mat-raised-button (click)="openDialog()">Cardapio</button>
   </div>
-  <div class="container-numeroFila"></div>
+
+  <div class="container-numeroFila">
+    <p class="num-fila">76</p>
+
+    <button class="btn-sairFIla" (click)="rotaSairFila()" mat-raised-button>
+      Sair da Fila
+    </button>
+  </div>
 </section>
 
 <footer class="container-footer">
