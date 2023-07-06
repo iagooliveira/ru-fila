@@ -1,18 +1,7 @@
-/* .container-menu {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-}
 
-.botao-menu {
-  margin-left: 24px;
-} */
 
 .toolbar {
   background: transparent;
-  /* height: 10rem; */
   width: 100%;
 }
 
@@ -34,14 +23,10 @@
 }
 
 .section-principal {
-  height: 100%;
-  /* margin-top: 3rem; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   height: 40rem;
-
-  /* background: pink; */
 }
 
 .container-imagem-logo {
@@ -49,21 +34,22 @@
   flex-direction: column;
   width: 100%;
   align-items: center;
-  gap: 2rem;
-  /* justify-content: space-between; */
+  gap: 1rem;
+  margin-top: -2rem;
 }
 
 .logo-ufba {
   margin-top: -5rem;
-  width: 13rem;
+  width: 10rem;
 }
 
 .logo-ruFila {
   width: 13rem;
+  margin-top: -1rem;
 }
 
 .container-menu {
-  margin-top: -10rem;
+  margin-top: -14rem;
   display: flex;
   flex-direction: column;
   gap: 4rem;
@@ -75,9 +61,58 @@
   border-radius: 0.6rem;
   width: 15rem;
   height: 3rem;
-  color: #FEFEFE;
+  color: #fefefe;
 
   font-family: "Poppins";
   line-width: 3rem;
-  
+}
+
+@media (max-height: 568px) {
+  .section-principal {
+    height: 25rem;
+  }
+
+  .logo-ufba {
+    width: 8rem;
+  }
+
+  .logo-ruFila {
+    width: 8rem;
+  }
+
+  .container-menu {
+    gap: 2.5rem;
+  }
+
+  .btn-menu {
+    width: 10rem;
+    height: 2rem;
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-height: 812px) {
+  .section-principal {
+    height: 35rem;
+  }
+
+  .logo-ufba {
+    margin-top: -7rem;
+    width: 12rem;
+  }
+
+  .logo-ruFila {
+    width: 12rem;
+  }
+
+  .container-menu {
+    gap: 2.5rem;
+    /* margin-top: -1rem; */
+  }
+
+  .btn-menu {
+    width: 13rem;
+    height: 3rem;
+    font-size: 0.9rem;
+  }
 }
