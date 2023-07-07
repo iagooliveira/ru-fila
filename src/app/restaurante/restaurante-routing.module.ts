@@ -7,6 +7,7 @@ import { AreaFuncionarioComponent } from './area-funcionario/area-funcionario.co
 import { AreaRestauranteComponent } from './home-restaurante/area-restaurante/area-restaurante.component';
 import { CadastrarRestauranteComponent } from './home-restaurante/area-restaurante/cadastrar-restaurante/cadastrar-restaurante.component';
 import { VisualizarRestaurantesComponent } from './home-restaurante/area-restaurante/visualizar-restaurantes/visualizar-restaurantes.component';
+import { VincularFuncionarioComponent } from './area-funcionario/vincular-funcionario/vincular-funcionario.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'visualizar-restaurantes',
     component: VisualizarRestaurantesComponent,
+  },
+  {
+    path: 'vincular-funcionario',
+    component: VincularFuncionarioComponent,
   },
 ];
 

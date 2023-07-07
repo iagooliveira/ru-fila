@@ -24,6 +24,7 @@ import { AreaFuncionarioComponent } from './area-funcionario/area-funcionario.co
 import { AreaRestauranteComponent } from './home-restaurante/area-restaurante/area-restaurante.component';
 import { CadastrarRestauranteComponent } from './home-restaurante/area-restaurante/cadastrar-restaurante/cadastrar-restaurante.component';
 import { VisualizarRestaurantesComponent } from './home-restaurante/area-restaurante/visualizar-restaurantes/visualizar-restaurantes.component';
+import { VincularFuncionarioComponent } from './area-funcionario/vincular-funcionario/vincular-funcionario.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { VisualizarRestaurantesComponent } from './home-restaurante/area-restaur
     AreaRestauranteComponent,
     CadastrarRestauranteComponent,
     VisualizarRestaurantesComponent,
+    VincularFuncionarioComponent,
   ],
   imports: [
     CommonModule,

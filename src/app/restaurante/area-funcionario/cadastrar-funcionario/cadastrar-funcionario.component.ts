@@ -6,6 +6,9 @@ import {
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { CadastrarRestauranteService } from '../../home-restaurante/area-restaurante/services/cadastrar-restaurante/cadastrar-restaurante.service';
+import { CadastrarFuncionarioService } from '../services-funcionario/cadastrar-funcionario.service';
+import * as dateFormat from 'dateformat';
 
 @Component({
   selector: 'app-cadastrar-funcionario',
@@ -16,31 +19,33 @@ export class CadastrarFuncionarioComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'start';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   toppings = new FormControl();
+  nome: string;
+  dataAdmissao: string;
 
-  toppingList: string[] = [
-    'Extra cheese',
-    'Mushroom',
-    'Onion',
-    'Pepperoni',
-    'Sausage',
-    'Tomato',
-  ];
-
-  constructor(private snackBar: MatSnackBar, private route: Router) {}
+  constructor(private snackBar: MatSnackBar,
+    private route: Router,
+    private cadastrarFuncionarioService: CadastrarFuncionarioService) {}
 
   ngOnInit(): void {}
 
-  openSnackBar() {
-    this.snackBar.open('Colaborador cadastrado com sucesso !', 'x', {
-      duration: 6000,
-
-      horizontalPosition: this.horizontalPosition,
-      verticalPosition: this.verticalPosition,
-    });
+  onCadastraFuncionario(nome: string, dataAdmissao: string) {
+    //dataAdmissao =  new Date('2022-12-31');
+    //dataAdmissao = dateFormat(dataAdmissao, "yyyy-mm-dd");
+    this.cadastrarFuncionarioService
+      .cadastraFuncionario(nome, dataAdmissao)
+      .subscribe((res) => {
+        console.log(res);
+        this.snackBar.open('Restaurante cadastrado com sucesso !', 'x', {
+          duration: 6000,
+    
+          horizontalPosition: this.horizontalPosition,
+          verticalPosition: this.verticalPosition,
+        });
+        void this.route.navigate(['area-funcionario']);
+      });
   }
 
   rotaHomeRestaurante() {
-    this.openSnackBar();
     void this.route.navigate(['home-restaurante']);
   }
 }

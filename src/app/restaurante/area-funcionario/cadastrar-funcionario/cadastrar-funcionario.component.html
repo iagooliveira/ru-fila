@@ -9,8 +9,8 @@
 
   <div class="dados-cardapio">
     <div class="container-input">
-      <mat-form-field appearance="fill" class="fild-container">
-        <mat-label class="label-select-restaurante">Restaurente</mat-label>
+      <!--<mat-form-field appearance="fill" class="fild-container">
+        <mat-label class="label-select-restaurante">Restaurante</mat-label>
         <mat-select class="select-restaurante" [formControl]="toppings">
           <mat-option
             class="option-restaurante"
@@ -19,20 +19,20 @@
             >{{ topping }}</mat-option
           >
         </mat-select>
-      </mat-form-field>
+      </mat-form-field>-->
       <mat-form-field appearance="legacy" class="form-input">
         <mat-label>Nome</mat-label>
-        <input matInput placeholder="Nome" />
+        <input matInput placeholder="Nome" [(ngModel)]="nome"/>
       </mat-form-field>
       <mat-form-field appearance="legacy" class="form-input">
         <mat-label>Data de Admissão</mat-label>
-        <input matInput placeholder="Data de Admissão" />
+        <input matInput placeholder="Data de Admissão" [(ngModel)]="dataAdmissao" />
       </mat-form-field>
 
       <button
         class="btn-cadastrar-cardapio"
         mat-raised-button
-        (click)="rotaHomeRestaurante()"
+        (click)="onCadastraFuncionario(nome, dataAdmissao)"
       >
         Cadastrar
       </button>

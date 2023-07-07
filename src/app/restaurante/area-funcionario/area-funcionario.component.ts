@@ -14,4 +14,8 @@ export class AreaFuncionarioComponent implements OnInit {
   rotaCadastrarFuncionario() {
     void this.route.navigate(['cadastrar-funcionario']);
   }
+
+  rotaVincularFuncionario() {
+    void this.route.navigate(['vincular-funcionario']);
+  }
 }
