@@ -10,46 +10,31 @@
   <div class="dados-cardapio">
     <div class="container-selects">
       <mat-form-field appearance="fill" class="fild-container">
-        <mat-label class="label-select-restaurante">Restaurente</mat-label>
-        <mat-select class="select-restaurante" [formControl]="toppings">
+        <mat-label class="label-select-restaurante">Restaurante</mat-label>
+        <mat-select class="select-restaurante" [formControl]="formsRestaurante">
           <mat-option
             class="option-restaurante"
-            *ngFor="let topping of toppingList"
-            [value]="topping"
-            >{{ topping }}</mat-option
+            *ngFor="let restaurante of listaRestaurantes"
+            [value]="restaurante.codigo"
+            >{{ restaurante.nome }}</mat-option
           >
         </mat-select>
       </mat-form-field>
 
-      <mat-form-field appearance="fill" class="fild-container">
-        <mat-label class="label-select-restaurante">Almoço</mat-label>
-        <mat-select class="select-restaurante" [formControl]="toppings">
-          <mat-option
-            class="option-restaurante"
-            *ngFor="let topping of toppingList"
-            [value]="topping"
-            >{{ topping }}</mat-option
-          >
-        </mat-select>
+      <mat-form-field appearance="legacy" class="form-input">
+        <mat-label>Data do Cardápio</mat-label>
+        <input matInput placeholder="Data" [(ngModel)]="data" placeholder="aaaa/mm/dd" />
       </mat-form-field>
     </div>
     <button
         class="btn-cadastrar-cardapio"
         mat-raised-button
-        (click)="onCadastraCardapio()"
+        (click)="onCadastraCardapio(data)"
       >
         Cadastrar
       </button>
       
   </div>
-
-  <!-- <div class="container-numeroFila">
-    <p class="num-fila">76</p>
-
-    <button class="btn-sairFIla" (click)="rotaSairFila()" mat-raised-button>
-      Sair da Fila
-    </button>
-  </div> -->
 </section>
 
 <footer class="container-footer">

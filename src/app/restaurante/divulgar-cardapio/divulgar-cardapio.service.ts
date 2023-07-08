@@ -20,7 +20,11 @@ export class DivulgarCardapioService {
     });
   }
 
-//   getFuncionarios(): Observable<any> {
-//     return this.http.get<any>('http://192.168.15.11:3005/funcionarios');
-//   }
+  cadastraCardapio(restauranteCodigo: number, data: string): Observable<any> {
+    return this.http.post<any>(`http://${environment.URL_REQ}:3005/cardapios`, {
+      restauranteCodigo: restauranteCodigo,
+      dataCardapio: data
+    });
+  }
+
 }

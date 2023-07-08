@@ -25,15 +25,6 @@ export class CadastrarPratoComponent implements OnInit {
 
   rotaVoltar = 'home-restaurante';
 
-  toppingList: string[] = [
-    'Extra cheese',
-    'Mushroom',
-    'Onion',
-    'Pepperoni',
-    'Sausage',
-    'Tomato',
-  ];
-
   constructor(private snackBar: MatSnackBar, private route: Router, private divulgarCardapioService: DivulgarCardapioService) {}
 
   ngOnInit(): void {}
@@ -57,7 +48,7 @@ export class CadastrarPratoComponent implements OnInit {
           horizontalPosition: this.horizontalPosition,
           verticalPosition: this.verticalPosition,
         });
-        void this.route.navigate(['divulgar-cardapio']);
+        void this.route.navigate(['home-restaurante']);
       });
   }
 }

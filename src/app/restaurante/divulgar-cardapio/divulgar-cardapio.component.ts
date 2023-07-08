@@ -7,6 +7,7 @@ import {
 } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { DivulgarCardapioService } from './divulgar-cardapio.service';
+import { VisualizarRestaurantesService } from '../home-restaurante/area-restaurante/services/visualizar-restaurantes/visualizar-restaurantes.service';
 
 @Component({
   selector: 'app-divulgar-cardapio',
@@ -16,27 +17,24 @@ import { DivulgarCardapioService } from './divulgar-cardapio.service';
 export class DivulgarCardapioComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'start';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
-  toppings = new FormControl();
-  principal: string;
-  salada: string;
-  guarnicao: string;
-  suco: string;
-  sobremesa: string;
+  data: string;
 
   rotaVoltar = 'home-restaurante';
 
-  toppingList: string[] = [
-    'Extra cheese',
-    'Mushroom',
-    'Onion',
-    'Pepperoni',
-    'Sausage',
-    'Tomato',
-  ];
+  listaRestaurantes: any[] = [];
+  formsRestaurante = new FormControl();
 
-  constructor(private snackBar: MatSnackBar, private route: Router, private divulgarCardapioService: DivulgarCardapioService) {}
+  constructor(private snackBar: MatSnackBar, private route: Router, 
+    private divulgarCardapioService: DivulgarCardapioService,
+    private visualizarRestaurantesService: VisualizarRestaurantesService
+    ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.visualizarRestaurantesService.getDados().subscribe((dados) => {
+      this.listaRestaurantes = dados.data;
+    });
+  }
+
   openSnackBar() {
     this.snackBar.open('Cardapio divulgado !', 'x', {
       duration: 6000,
@@ -46,12 +44,19 @@ export class DivulgarCardapioComponent implements OnInit {
     });
   }
 
-  rotaHomeRestaurante() {
-    this.openSnackBar();
-    void this.route.navigate(['home-restaurante']);
-  }
-
-  onCadastraCardapio() {
-      void this.route.navigate(['cadastrar-prato']);
+  onCadastraCardapio(data: string) {
+    const idRestaurante = this.formsRestaurante.value;
+    this.divulgarCardapioService
+      .cadastraCardapio(idRestaurante, data)
+      .subscribe((dados) => {
+        this.snackBar.open('Cardápio cadastrado com sucesso !', 'x', {
+          duration: 6000,
+    
+          horizontalPosition: this.horizontalPosition,
+          verticalPosition: this.verticalPosition,
+        });
+        void this.route.navigate(['home-restaurante']);
+      });
+      
   }
 }
