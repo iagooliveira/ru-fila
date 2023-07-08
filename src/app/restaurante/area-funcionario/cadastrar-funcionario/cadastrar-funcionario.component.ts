@@ -22,9 +22,13 @@ export class CadastrarFuncionarioComponent implements OnInit {
   nome: string;
   dataAdmissao: string;
 
-  constructor(private snackBar: MatSnackBar,
+  rotaVoltar = 'area-funcionario';
+
+  constructor(
+    private snackBar: MatSnackBar,
     private route: Router,
-    private cadastrarFuncionarioService: CadastrarFuncionarioService) {}
+    private cadastrarFuncionarioService: CadastrarFuncionarioService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -37,7 +41,7 @@ export class CadastrarFuncionarioComponent implements OnInit {
         console.log(res);
         this.snackBar.open('Restaurante cadastrado com sucesso !', 'x', {
           duration: 6000,
-    
+
           horizontalPosition: this.horizontalPosition,
           verticalPosition: this.verticalPosition,
         });

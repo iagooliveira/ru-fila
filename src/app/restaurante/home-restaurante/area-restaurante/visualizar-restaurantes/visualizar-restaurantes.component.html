@@ -5,13 +5,7 @@
     <div class="container-imagem-logo">
       <img class="logo-ruFila" src="assets/logo.png" alt="" />
     </div>
-    <button
-        class="btn-menu"
-        mat-raised-button
-        (click)="voltar()"
-      >
-        <- Voltar
-      </button>
+    <app-botao-voltar [rota]='rotaVoltar'></app-botao-voltar>
     <div class="card-dados">
       <div class="container-input">
 

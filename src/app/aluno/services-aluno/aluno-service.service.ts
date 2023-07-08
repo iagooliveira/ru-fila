@@ -6,15 +6,12 @@ import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root',
 })
-export class CadastrarRestauranteService {
+export class AlunoServiceService {
   constructor(private http: HttpClient) {}
 
-  cadastraRestaurante(nome: string): Observable<any> {
-    return this.http.post<any>(
-      `http://${environment.URL_REQ}:3005/restaurantes`,
-      {
-        nome: nome,
-      }
-    );
+  cadastraAluno(matricula: string): Observable<any> {
+    return this.http.post<any>(`http://${environment.URL_REQ}:3005/alunos`, {
+      matricula: matricula,
+    });
   }
 }

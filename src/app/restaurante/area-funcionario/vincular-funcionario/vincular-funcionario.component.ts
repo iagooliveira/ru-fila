@@ -6,19 +6,20 @@ import { FormControl } from '@angular/forms';
 @Component({
   selector: 'app-vincular-funcionario',
   templateUrl: './vincular-funcionario.component.html',
-  styleUrls: ['./vincular-funcionario.component.css']
+  styleUrls: ['./vincular-funcionario.component.css'],
 })
 export class VincularFuncionarioComponent implements OnInit {
-
+  rotaVoltar = 'area-funcionario';
   listaRestaurantes: any[] = [];
   listaFuncionarios: any[] = [];
   formsRestaurante = new FormControl();
   formsFuncionario = new FormControl();
-  constructor(private cadastrarFuncionarioService: CadastrarFuncionarioService,
-    private visualizarRestaurantesService: VisualizarRestaurantesService) { }
+  constructor(
+    private cadastrarFuncionarioService: CadastrarFuncionarioService,
+    private visualizarRestaurantesService: VisualizarRestaurantesService
+  ) {}
 
   ngOnInit(): void {
-
     this.visualizarRestaurantesService.getDados().subscribe((dados) => {
       this.listaRestaurantes = dados.data;
     });
@@ -26,16 +27,16 @@ export class VincularFuncionarioComponent implements OnInit {
     this.cadastrarFuncionarioService.getFuncionarios().subscribe((dados) => {
       this.listaFuncionarios = dados.data;
     });
-
   }
 
   onVinculaFuncionarioRestaurante() {
     //console.log(this.formsRestaurante);
-     const idRestaurante = this.formsRestaurante.value;
-     const idFuncionario = this.formsFuncionario.value;
-     this.visualizarRestaurantesService.vinculaFuncionarioRestaurante(idRestaurante, idFuncionario).subscribe((dados) => {
-       alert(dados.message);
-     });
+    const idRestaurante = this.formsRestaurante.value;
+    const idFuncionario = this.formsFuncionario.value;
+    this.visualizarRestaurantesService
+      .vinculaFuncionarioRestaurante(idRestaurante, idFuncionario)
+      .subscribe((dados) => {
+        alert(dados.message);
+      });
   }
-
 }

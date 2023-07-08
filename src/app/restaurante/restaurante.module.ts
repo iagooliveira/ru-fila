@@ -25,6 +25,7 @@ import { AreaRestauranteComponent } from './home-restaurante/area-restaurante/ar
 import { CadastrarRestauranteComponent } from './home-restaurante/area-restaurante/cadastrar-restaurante/cadastrar-restaurante.component';
 import { VisualizarRestaurantesComponent } from './home-restaurante/area-restaurante/visualizar-restaurantes/visualizar-restaurantes.component';
 import { VincularFuncionarioComponent } from './area-funcionario/vincular-funcionario/vincular-funcionario.component';
+import { BotaoVoltarModule } from '../home/botao-voltar/botao-voltar.module';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { VincularFuncionarioComponent } from './area-funcionario/vincular-funcio
     FormsModule,
     ReactiveFormsModule,
     MatSnackBarModule,
+    BotaoVoltarModule,
   ],
 })
 export class RestauranteModule {}

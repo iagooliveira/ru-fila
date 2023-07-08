@@ -23,6 +23,8 @@ export class DivulgarCardapioComponent implements OnInit {
   suco: string;
   sobremesa: string;
 
+  rotaVoltar = 'home-restaurante';
+
   toppingList: string[] = [
     'Extra cheese',
     'Mushroom',

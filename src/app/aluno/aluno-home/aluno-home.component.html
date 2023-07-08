@@ -11,16 +11,18 @@
 
       <mat-form-field appearance="legacy" class="form-input">
         <mat-label>Matricula</mat-label>
-        <input matInput placeholder="Matricula" />
+        <input matInput placeholder="Matricula"  [formControl]="formsMatricula"/>
       </mat-form-field>
-      <mat-form-field appearance="legacy" class="form-input">
+      <!-- <mat-form-field appearance="legacy" class="form-input">
         <mat-label>Nome</mat-label>
         <input matInput placeholder="Nome" />
-      </mat-form-field>
+      </mat-form-field> -->
     </div>
 
-    <button class="btn-menu" mat-raised-button (click)="rotaFilaAluno()">CADASTRO</button>
+    <button class="btn-menu" mat-raised-button (click)="cadastrarAluno()">CADASTRO</button>
   </div>
+  
+  <app-botao-voltar [rota]='rotaVoltar'></app-botao-voltar>
 </section>
 
 <footer class="container-footer">
