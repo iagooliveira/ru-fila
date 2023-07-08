@@ -6,6 +6,7 @@ import {
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
+import { DivulgarCardapioService } from './divulgar-cardapio.service';
 
 @Component({
   selector: 'app-divulgar-cardapio',
@@ -16,6 +17,11 @@ export class DivulgarCardapioComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'start';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   toppings = new FormControl();
+  principal: string;
+  salada: string;
+  guarnicao: string;
+  suco: string;
+  sobremesa: string;
 
   toppingList: string[] = [
     'Extra cheese',
@@ -26,7 +32,7 @@ export class DivulgarCardapioComponent implements OnInit {
     'Tomato',
   ];
 
-  constructor(private snackBar: MatSnackBar, private route: Router) {}
+  constructor(private snackBar: MatSnackBar, private route: Router, private divulgarCardapioService: DivulgarCardapioService) {}
 
   ngOnInit(): void {}
   openSnackBar() {
@@ -41,5 +47,20 @@ export class DivulgarCardapioComponent implements OnInit {
   rotaHomeRestaurante() {
     this.openSnackBar();
     void this.route.navigate(['home-restaurante']);
+  }
+
+  onCadastraPrato(principal: string, salada: string, guarnicao: string, suco: string, sobremesa: string) {
+    this.divulgarCardapioService
+      .cadastraPrato(principal, salada, guarnicao, suco, sobremesa)
+      .subscribe((res) => {
+        console.log(res);
+        this.snackBar.open('Prato cadastrado com sucesso !', 'x', {
+          duration: 6000,
+    
+          horizontalPosition: this.horizontalPosition,
+          verticalPosition: this.verticalPosition,
+        });
+        void this.route.navigate(['']);
+      });
   }
 }
