@@ -9,7 +9,7 @@ import { AlunoServiceService } from '../services-aluno/aluno-service.service';
   styleUrls: ['./aluno-home.component.css'],
 })
 export class AlunoHomeComponent implements OnInit {
-  rotaVoltar = 'home-restaurante';
+  rotaVoltar = 'home';
   formsMatricula = new FormControl();
 
   constructor(
