@@ -17,6 +17,8 @@ export class DivulgarCardapioComponent implements OnInit {
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   toppings = new FormControl();
 
+  rotaVoltar = 'home-restaurante';
+
   toppingList: string[] = [
     'Extra cheese',
     'Mushroom',

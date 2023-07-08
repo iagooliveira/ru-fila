@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./area-funcionario.component.css'],
 })
 export class AreaFuncionarioComponent implements OnInit {
+  rotaVoltar = 'home-restaurante';
   constructor(private route: Router) {}
 
   ngOnInit(): void {}

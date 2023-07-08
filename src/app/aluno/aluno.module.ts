@@ -20,16 +20,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { CardapioComponent } from './cardapio/cardapio.component';
-
-
+import { BotaoVoltarModule } from '../home/botao-voltar/botao-voltar.module';
 
 @NgModule({
-  declarations: [
-    EntrarFilaComponent,
-    AlunoHomeComponent,
-    CardapioComponent,
-
-  ],
+  declarations: [EntrarFilaComponent, AlunoHomeComponent, CardapioComponent],
   imports: [
     CommonModule,
     AlunoRoutingModule,
@@ -52,7 +46,8 @@ import { CardapioComponent } from './cardapio/cardapio.component';
 
     FormsModule,
     ReactiveFormsModule,
+    BotaoVoltarModule,
   ],
   // schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
-export class AlunoModule { }
+export class AlunoModule {}

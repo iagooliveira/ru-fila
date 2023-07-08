@@ -1,21 +1,30 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class VisualizarRestaurantesService {
-  restauranteCodigo:number;
+  restauranteCodigo: number;
   funcionarioCodigo: number;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getDados(): Observable<any> {
-    return this.http.get('http://192.168.15.11:3005/restaurantes');
+    return this.http.get(`http://${environment.URL_REQ}:3005/restaurantes`);
   }
-  
-  vinculaFuncionarioRestaurante(restauranteCodigo: number, funcionarioCodigo: number): Observable<any> {
-    return this.http.post<any>('http://192.168.15.11:3005/funcionario_restaurante', {restauranteCodigo: restauranteCodigo, funcionarioCodigo: funcionarioCodigo});
-}
 
+  vinculaFuncionarioRestaurante(
+    restauranteCodigo: number,
+    funcionarioCodigo: number
+  ): Observable<any> {
+    return this.http.post<any>(
+      `http://${environment.URL_REQ}:3005/funcionario_restaurante`,
+      {
+        restauranteCodigo: restauranteCodigo,
+        funcionarioCodigo: funcionarioCodigo,
+      }
+    );
+  }
 }

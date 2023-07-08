@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { CadastrarRestauranteService } from '../services/cadastrar-restaurante/cadastrar-restaurante.service';
 import { Router } from '@angular/router';
-import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+import {
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-cadastrar-restaurante',
@@ -13,6 +17,7 @@ export class CadastrarRestauranteComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'start';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
 
+  rotaVoltar = 'area-restaurante';
   constructor(
     private cadastrarRestauranteService: CadastrarRestauranteService,
     private route: Router,
@@ -28,7 +33,7 @@ export class CadastrarRestauranteComponent implements OnInit {
         console.log(res);
         this.snackBar.open('Restaurante cadastrado com sucesso !', 'x', {
           duration: 6000,
-    
+
           horizontalPosition: this.horizontalPosition,
           verticalPosition: this.verticalPosition,
         });
@@ -36,7 +41,7 @@ export class CadastrarRestauranteComponent implements OnInit {
       });
   }
 
-  voltar() {
-    void this.route.navigate(['area-restaurante']);
-  }
+  // voltar() {
+  //   void this.route.navigate(['area-restaurante']);
+  // }
 }
