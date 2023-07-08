@@ -26,6 +26,7 @@ import { CadastrarRestauranteComponent } from './home-restaurante/area-restauran
 import { VisualizarRestaurantesComponent } from './home-restaurante/area-restaurante/visualizar-restaurantes/visualizar-restaurantes.component';
 import { VincularFuncionarioComponent } from './area-funcionario/vincular-funcionario/vincular-funcionario.component';
 import { BotaoVoltarModule } from '../home/botao-voltar/botao-voltar.module';
+import { CadastrarPratoComponent } from './divulgar-cardapio/cadastrar-prato/cadastrar-prato.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { BotaoVoltarModule } from '../home/botao-voltar/botao-voltar.module';
     CadastrarRestauranteComponent,
     VisualizarRestaurantesComponent,
     VincularFuncionarioComponent,
+    CadastrarPratoComponent,
   ],
   imports: [
     CommonModule,

@@ -6,14 +6,14 @@ import {
   MatSnackBarVerticalPosition,
 } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { DivulgarCardapioService } from './divulgar-cardapio.service';
+import { DivulgarCardapioService } from '../divulgar-cardapio.service';
 
 @Component({
-  selector: 'app-divulgar-cardapio',
-  templateUrl: './divulgar-cardapio.component.html',
-  styleUrls: ['./divulgar-cardapio.component.css'],
+  selector: 'app-cadastrar-prato',
+  templateUrl: './cadastrar-prato.component.html',
+  styleUrls: ['./cadastrar-prato.component.css']
 })
-export class DivulgarCardapioComponent implements OnInit {
+export class CadastrarPratoComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'start';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   toppings = new FormControl();
@@ -46,12 +46,18 @@ export class DivulgarCardapioComponent implements OnInit {
     });
   }
 
-  rotaHomeRestaurante() {
-    this.openSnackBar();
-    void this.route.navigate(['home-restaurante']);
-  }
-
-  onCadastraCardapio() {
-      void this.route.navigate(['cadastrar-prato']);
+  onCadastraPrato(principal: string, salada: string, guarnicao: string, suco: string, sobremesa: string) {
+    this.divulgarCardapioService
+      .cadastraPrato(principal, salada, guarnicao, suco, sobremesa)
+      .subscribe((res) => {
+        console.log(res);
+        this.snackBar.open('Prato cadastrado com sucesso !', 'x', {
+          duration: 6000,
+    
+          horizontalPosition: this.horizontalPosition,
+          verticalPosition: this.verticalPosition,
+        });
+        void this.route.navigate(['divulgar-cardapio']);
+      });
   }
 }

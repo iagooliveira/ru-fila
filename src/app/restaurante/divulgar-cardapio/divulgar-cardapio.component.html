@@ -33,36 +33,14 @@
         </mat-select>
       </mat-form-field>
     </div>
-
-    <div class="container-input">
-      <mat-form-field appearance="legacy" class="form-input">
-        <mat-label>Saladas</mat-label>
-        <input matInput placeholder="Saladas" [(ngModel)]="salada"/>
-      </mat-form-field>
-      <mat-form-field appearance="legacy" class="form-input">
-        <mat-label>Prato Principal</mat-label>
-        <input matInput placeholder="Prato Principal" [(ngModel)]="principal"/>
-      </mat-form-field>
-      <mat-form-field appearance="legacy" class="form-input">
-        <mat-label>Guarnição</mat-label>
-        <input matInput placeholder="Guarnição" [(ngModel)]="guarnicao" />
-      </mat-form-field>
-      <mat-form-field appearance="legacy" class="form-input">
-        <mat-label>Sobremesa</mat-label>
-        <input matInput placeholder="Sobremesa" [(ngModel)]="sobremesa"/>
-      </mat-form-field>
-      <mat-form-field appearance="legacy" class="form-input">
-        <mat-label>Suco</mat-label>
-        <input matInput placeholder="Suco" [(ngModel)]="suco"/>
-      </mat-form-field>
-      <button
+    <button
         class="btn-cadastrar-cardapio"
         mat-raised-button
-        (click)="onCadastraPrato(principal, salada, guarnicao, suco, sobremesa)"
+        (click)="onCadastraCardapio()"
       >
         Cadastrar
       </button>
-    </div>
+      
   </div>
 
   <!-- <div class="container-numeroFila">
