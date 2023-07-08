@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AlunoServiceService } from '../services-aluno/aluno-service.service';
 
 @Component({
   selector: 'app-aluno-home',
@@ -8,10 +10,24 @@ import { Router } from '@angular/router';
 })
 export class AlunoHomeComponent implements OnInit {
   rotaVoltar = 'home-restaurante';
-  constructor(private route: Router) {}
+  formsMatricula = new FormControl();
+
+  constructor(
+    private route: Router,
+    private alunosService: AlunoServiceService
+  ) {}
 
   ngOnInit(): void {}
-  rotaFilaAluno(): void {
-    void this.route.navigate(['entrar-fila']);
+
+  // rotaFilaAluno(): void {
+  //   void this.route.navigate(['entrar-fila']);
+  // }
+
+  cadastrarAluno(): void {
+    this.alunosService
+      .cadastraAluno(this.formsMatricula.value)
+      .subscribe((res) => {
+        void this.route.navigate(['entrar-fila']);
+      });
   }
 }
