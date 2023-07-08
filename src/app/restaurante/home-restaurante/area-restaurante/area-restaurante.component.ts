@@ -7,6 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./area-restaurante.component.css'],
 })
 export class AreaRestauranteComponent implements OnInit {
+  rotaVoltar = 'home-restaurante';
   constructor(private route: Router) {}
 
   ngOnInit(): void {}

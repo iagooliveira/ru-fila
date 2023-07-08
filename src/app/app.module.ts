@@ -22,11 +22,7 @@ import { AlunoModule } from './aluno/aluno.module';
 import { RestauranteModule } from './restaurante/restaurante.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    MenuComponent,
-  ],
+  declarations: [AppComponent, HomeComponent, MenuComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -43,7 +39,7 @@ import { RestauranteModule } from './restaurante/restaurante.module';
     MatNativeDateModule,
     MatToolbarModule,
     AlunoModule,
-    RestauranteModule
+    RestauranteModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

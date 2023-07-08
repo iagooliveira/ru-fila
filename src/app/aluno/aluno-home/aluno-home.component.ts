@@ -4,14 +4,13 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-aluno-home',
   templateUrl: './aluno-home.component.html',
-  styleUrls: ['./aluno-home.component.css']
+  styleUrls: ['./aluno-home.component.css'],
 })
 export class AlunoHomeComponent implements OnInit {
+  rotaVoltar = 'home-restaurante';
+  constructor(private route: Router) {}
 
-  constructor(private route: Router) { }
-
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   rotaFilaAluno(): void {
     void this.route.navigate(['entrar-fila']);
   }

@@ -5,17 +5,28 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-visualizar-restaurantes',
   templateUrl: './visualizar-restaurantes.component.html',
-  styleUrls: ['./visualizar-restaurantes.component.css']
+  styleUrls: ['./visualizar-restaurantes.component.css'],
 })
 export class VisualizarRestaurantesComponent implements OnInit {
-dados: any[];
-  constructor(private visualizarRestaurantes: VisualizarRestaurantesService, private route:Router) { }
+  dados: any[];
+  rotaVoltar = 'area-restaurante';
+  constructor(
+    private visualizarRestaurantes: VisualizarRestaurantesService,
+    private route: Router
+  ) {}
 
   ngOnInit(): void {
-    this.visualizarRestaurantes.getDados().subscribe((res) => {this.dados = res.data;}, (error) => {console.log(error);})
+    this.visualizarRestaurantes.getDados().subscribe(
+      (res) => {
+        this.dados = res.data;
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
-  voltar() {
-    void this.route.navigate(['area-restaurante']);
-  }
+  // voltar() {
+  //   void this.route.navigate(['area-restaurante']);
+  // }
 }
