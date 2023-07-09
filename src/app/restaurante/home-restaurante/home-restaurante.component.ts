@@ -12,12 +12,8 @@ export class HomeRestauranteComponent implements OnInit {
   // rota para o restaurante home-resutaurente, só olhar o no restaurente routing, o nome da pasta vai ser a rota
   ngOnInit(): void {}
 
-  rotaDivulgaCardapio() {
-    void this.route.navigate(['divulgar-cardapio']);
-  }
-
-  rotaCadastraPrato() {
-    void this.route.navigate(['cadastrar-prato']);
+  rotaAreaCardapio() {
+    void this.route.navigate(['area-cardapio']);
   }
 
   rotaAreaFuncionario() {

@@ -27,6 +27,11 @@ import { VisualizarRestaurantesComponent } from './home-restaurante/area-restaur
 import { VincularFuncionarioComponent } from './area-funcionario/vincular-funcionario/vincular-funcionario.component';
 import { BotaoVoltarModule } from '../home/botao-voltar/botao-voltar.module';
 import { CadastrarPratoComponent } from './divulgar-cardapio/cadastrar-prato/cadastrar-prato.component';
+import { VincularCardapioPratoComponent } from './divulgar-cardapio/vincular-cardapio-prato/vincular-cardapio-prato.component';
+import { AreaCardapioComponent } from './divulgar-cardapio/area-cardapio/area-cardapio.component';
+import { CardapioComponent } from '../aluno/cardapio/cardapio.component';
+import { AlunoModule } from '../aluno/aluno.module';
+
 
 @NgModule({
   declarations: [
@@ -39,6 +44,8 @@ import { CadastrarPratoComponent } from './divulgar-cardapio/cadastrar-prato/cad
     VisualizarRestaurantesComponent,
     VincularFuncionarioComponent,
     CadastrarPratoComponent,
+    VincularCardapioPratoComponent,
+    AreaCardapioComponent
   ],
   imports: [
     CommonModule,
@@ -63,7 +70,7 @@ import { CadastrarPratoComponent } from './divulgar-cardapio/cadastrar-prato/cad
     FormsModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    BotaoVoltarModule,
+    BotaoVoltarModule
   ],
 })
 export class RestauranteModule {}

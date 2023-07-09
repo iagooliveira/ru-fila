@@ -9,11 +9,17 @@ import { CadastrarRestauranteComponent } from './home-restaurante/area-restauran
 import { VisualizarRestaurantesComponent } from './home-restaurante/area-restaurante/visualizar-restaurantes/visualizar-restaurantes.component';
 import { VincularFuncionarioComponent } from './area-funcionario/vincular-funcionario/vincular-funcionario.component';
 import { CadastrarPratoComponent } from './divulgar-cardapio/cadastrar-prato/cadastrar-prato.component';
+import { VincularCardapioPratoComponent } from './divulgar-cardapio/vincular-cardapio-prato/vincular-cardapio-prato.component';
+import { AreaCardapioComponent } from './divulgar-cardapio/area-cardapio/area-cardapio.component';
 
 const routes: Routes = [
   {
     path: 'home-restaurante',
     component: HomeRestauranteComponent,
+  },
+  {
+    path: 'area-cardapio',
+    component: AreaCardapioComponent,
   },
   {
     path: 'divulgar-cardapio',
@@ -22,6 +28,10 @@ const routes: Routes = [
   {
     path: 'cadastrar-prato',
     component: CadastrarPratoComponent,
+  },
+  {
+    path: 'vincular-cardapio-prato',
+    component: VincularCardapioPratoComponent,
   },
   {
     path: 'cadastrar-funcionario',
