@@ -16,18 +16,20 @@ import { DivulgarCardapioService } from '../divulgar-cardapio.service';
 export class CadastrarPratoComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'start';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
-  toppings = new FormControl();
   principal: string;
   salada: string;
   guarnicao: string;
   suco: string;
   sobremesa: string;
 
-  rotaVoltar = 'home-restaurante';
+  rotaVoltar = 'area-cardapio';
 
-  constructor(private snackBar: MatSnackBar, private route: Router, private divulgarCardapioService: DivulgarCardapioService) {}
+
+  constructor(private snackBar: MatSnackBar, private route: Router, 
+    private divulgarCardapioService: DivulgarCardapioService) {}
 
   ngOnInit(): void {}
+
   openSnackBar() {
     this.snackBar.open('Cardapio divulgado !', 'x', {
       duration: 6000,
@@ -48,7 +50,7 @@ export class CadastrarPratoComponent implements OnInit {
           horizontalPosition: this.horizontalPosition,
           verticalPosition: this.verticalPosition,
         });
-        void this.route.navigate(['home-restaurante']);
+        void this.route.navigate(['area-cardapio']);
       });
   }
 }

@@ -19,7 +19,7 @@ export class DivulgarCardapioComponent implements OnInit {
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   data: string;
 
-  rotaVoltar = 'home-restaurante';
+  rotaVoltar = 'area-cardapio';
 
   listaRestaurantes: any[] = [];
   formsRestaurante = new FormControl();
@@ -55,7 +55,7 @@ export class DivulgarCardapioComponent implements OnInit {
           horizontalPosition: this.horizontalPosition,
           verticalPosition: this.verticalPosition,
         });
-        void this.route.navigate(['home-restaurante']);
+        void this.route.navigate(['area-cardapio']);
       });
       
   }

@@ -20,6 +20,14 @@ export class DivulgarCardapioService {
     });
   }
 
+  listaPratos(): Observable<any> {
+    return this.http.get(`http://${environment.URL_REQ}:3005/pratos`);
+  }
+
+  listaPrato(codigoPrato: number): Observable<any> {
+    return this.http.get(`http://${environment.URL_REQ}:3005/pratos/${codigoPrato}`);
+  }
+
   cadastraCardapio(restauranteCodigo: number, data: string): Observable<any> {
     return this.http.post<any>(`http://${environment.URL_REQ}:3005/cardapios`, {
       restauranteCodigo: restauranteCodigo,
@@ -27,4 +35,14 @@ export class DivulgarCardapioService {
     });
   }
 
+  listaCardapios(): Observable<any> {
+    return this.http.get(`http://${environment.URL_REQ}:3005/cardapios`);
+  }
+
+  cadastraPratoCardapio(cardapioCodigo: number, pratoCodigo: number): Observable <any>{
+    return this.http.post<any>(`http://${environment.URL_REQ}:3005/cardapio_prato`, {
+      cardapio_codigo: cardapioCodigo,
+      prato_codigo: pratoCodigo
+    });
+  }
 }
