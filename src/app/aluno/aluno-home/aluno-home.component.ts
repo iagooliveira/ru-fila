@@ -23,6 +23,9 @@ export class AlunoHomeComponent implements OnInit {
   //   void this.route.navigate(['entrar-fila']);
   // }
 
+  rotaByPass(): void {
+    void this.route.navigate(['entrar-fila']);
+  }
   cadastrarAluno(): void {
     this.alunosService
       .cadastraAluno(this.formsMatricula.value)

@@ -77,14 +77,15 @@ export class EntrarFilaComponent implements OnInit {
     console.log('idAluno: ', idAluno, 'codigoDaFila: ', this.codigoFila, 'ultimaposicao: ',this.ultimaPosicao1);
   });
 }, 1400);
-  //this.entrarFilaService.entrarFilaAluno(idAluno, idPrato, this.ultimaPosicao1).subscribe((dados) => {
-    this.snackBar.open(`Entrou na fila! Posição: ${this.listaAlunoFila.length +1}`, 'x', {
+
+  this.snackBar.open(`Entrou na fila! Posição: ${this.listaAlunoFila.length +1}`, 'x', {
       duration: 6000,
 
       horizontalPosition: this.horizontalPosition,
       verticalPosition: this.verticalPosition,
     });
     setTimeout(() => {
+      console.log(this.ultimaPosicao1);
       location.reload();
     }, 1350);
 }
@@ -93,18 +94,19 @@ export class EntrarFilaComponent implements OnInit {
     void this.route.navigate(['home']);
   }
 
-  openDialog() {
-console.log(this.listaAlunoFila.length);
+openDialog() {
+  console.log(this.listaAlunoFila.length);
+  void this.route.navigate(['ver-fila']);
 
-    const dialogRef = this.dialog.open(CardapioComponent, {
-      data: {
-        animal: 'panda',
-      },
-    });
+    // const dialogRef = this.dialog.open(CardapioComponent, {
+    //   data: {
+    //     animal: 'panda',
+    //   },
+    // });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-      // aqui pega a resposta do dialog
-    });
+    // dialogRef.afterClosed().subscribe((result) => {
+    //   console.log('The dialog was closed');
+    //   // aqui pega a resposta do dialog
+    // });
   }
 }

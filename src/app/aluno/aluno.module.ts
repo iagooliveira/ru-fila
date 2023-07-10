@@ -21,9 +21,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { CardapioComponent } from './cardapio/cardapio.component';
 import { BotaoVoltarModule } from '../home/botao-voltar/botao-voltar.module';
+import { VerFilaComponent } from './ver-fila/ver-fila/ver-fila.component';
 
 @NgModule({
-  declarations: [EntrarFilaComponent, AlunoHomeComponent, CardapioComponent],
+  declarations: [EntrarFilaComponent, AlunoHomeComponent, CardapioComponent, VerFilaComponent],
   imports: [
     CommonModule,
     AlunoRoutingModule,
