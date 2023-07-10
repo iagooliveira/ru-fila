@@ -44,14 +44,15 @@
       </mat-select>
     </mat-form-field>
 
-    <button class="btn-cardapio" mat-raised-button (click)="onEntrarFila()">Cardapio</button>
+    <button class="btn-cardapio" mat-raised-button (click)="openDialog()">Cardapio</button>
   </div>
 
   <div class="container-numeroFila">
-    <p class="num-fila">76</p>
+    <p class="label-numeroFila">Pessoas na fila:</p>
+    <p class="num-fila">{{listaAlunoFila.length}}</p>
 
-    <button class="btn-sairFIla" (click)="rotaSairFila()" mat-raised-button>
-      Sair da Fila
+    <button class="btn-sairFIla" (click)="onEntrarFila()" mat-raised-button>
+      Entrar na Fila
     </button>
   </div>
 </section>

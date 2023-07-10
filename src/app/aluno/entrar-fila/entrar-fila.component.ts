@@ -4,6 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { CardapioComponent } from '../cardapio/cardapio.component';
 import { EntrarFilaService } from '../services-entrar-fila/entrar-fila.service';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-entrar-fila',
@@ -11,10 +12,13 @@ import { EntrarFilaService } from '../services-entrar-fila/entrar-fila.service';
   styleUrls: ['./entrar-fila.component.css'],
 })
 export class EntrarFilaComponent implements OnInit {
+  horizontalPosition: MatSnackBarHorizontalPosition = 'start';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
   listaRestaurantes: any[] = [];
   listaAlunos: any[] = [];
   listaPratos: any[] = [];
   listaFila: any[] = [];
+  listaAlunoFila: any[] = [];
   ultimaPosicao1: number;
   currentDate: string;
   codigoFila: number;
@@ -23,7 +27,7 @@ export class EntrarFilaComponent implements OnInit {
   formsPrato = new FormControl();
 
 
-  constructor(private route: Router, public dialog: MatDialog, private entrarFilaService: EntrarFilaService) {}
+  constructor(private route: Router, public dialog: MatDialog, private entrarFilaService: EntrarFilaService, private snackBar: MatSnackBar,) {}
 
   ngOnInit(): void {
     const today = new Date();
@@ -47,6 +51,9 @@ export class EntrarFilaComponent implements OnInit {
     this.entrarFilaService.getFila().subscribe((dados) => {
       this.listaFila = dados.data;
     });
+    this.entrarFilaService.getAlunoFila().subscribe((dados) => {
+      this.listaAlunoFila = dados.data;
+    });
   }
 
   onEntrarFila() {
@@ -63,14 +70,23 @@ export class EntrarFilaComponent implements OnInit {
       this.codigoFila = dados.data[0].codigo;
       //console.log(this.codigoFila);
     });
-  }, 1000);
+  }, 900);
  
   setTimeout(() => {
   this.entrarFilaService.entrarFilaAluno(idAluno, this.codigoFila, this.ultimaPosicao1).subscribe((dados) => {
     console.log('idAluno: ', idAluno, 'codigoDaFila: ', this.codigoFila, 'ultimaposicao: ',this.ultimaPosicao1);
   });
-}, 1500);
+}, 1400);
   //this.entrarFilaService.entrarFilaAluno(idAluno, idPrato, this.ultimaPosicao1).subscribe((dados) => {
+    this.snackBar.open(`Entrou na fila! Posição: ${this.listaAlunoFila.length +1}`, 'x', {
+      duration: 6000,
+
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
+    });
+    setTimeout(() => {
+      location.reload();
+    }, 1350);
 }
   
   rotaSairFila(): void {
@@ -78,7 +94,7 @@ export class EntrarFilaComponent implements OnInit {
   }
 
   openDialog() {
-console.log(this.ultimaPosicao1);
+console.log(this.listaAlunoFila.length);
 
     const dialogRef = this.dialog.open(CardapioComponent, {
       data: {

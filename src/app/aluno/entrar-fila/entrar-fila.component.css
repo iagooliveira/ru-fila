@@ -86,7 +86,7 @@
   font-family: "Poppins";
   color: white;
   font-weight: 600;
-  padding-top: 1.5rem;
+
 }
 
 .btn-sairFIla {
@@ -96,4 +96,12 @@
   width: 10rem;
   font-size: 0.7rem;
   margin-bottom: 0.5rem
+}
+
+.label-numeroFila {
+  font-size: 0.8rem;
+  font-family: "Poppins";
+  color: white;
+  font-weight: 600;
+  padding-top: 0.5rem;
 }

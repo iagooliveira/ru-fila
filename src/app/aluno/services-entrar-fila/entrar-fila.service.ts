@@ -59,5 +59,8 @@ export class EntrarFilaService {
     });
   }
 
+  getAlunoFila(): Observable<any> {
+    return this.http.get(`http://${environment.URL_PC_REMOTO}:3005/aluno_fila`);
+  }
 
 }
