@@ -9,30 +9,42 @@
 
   <div class="container-selects">
     <mat-form-field appearance="fill" class="fild-container">
-      <mat-label class="label-select-restaurante">Restaurente</mat-label>
-      <mat-select class="select-restaurante" [formControl]="toppings">
+      <mat-label class="label-select-restaurante">Aluno</mat-label>
+      <mat-select class="select-restaurante" [formControl]="formsAluno">
         <mat-option
           class="option-restaurante"
-          *ngFor="let topping of toppingList"
-          [value]="topping"
-          >{{ topping }}</mat-option
+          *ngFor="let aluno of listaAlunos"
+          [value]="aluno.matricula"
+          >{{ aluno.matricula }}</mat-option
+        >
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="fild-container">
+      <mat-label class="label-select-restaurante">Restaurante</mat-label>
+      <mat-select class="select-restaurante" [formControl]="formsRestaurante">
+        <mat-option
+          class="option-restaurante"
+          *ngFor="let restaurante of listaRestaurantes"
+          [value]="restaurante.codigo"
+          >{{ restaurante.nome }}</mat-option
         >
       </mat-select>
     </mat-form-field>
 
     <mat-form-field appearance="fill" class="fild-container">
       <mat-label class="label-select-restaurante">Almoço</mat-label>
-      <mat-select class="select-restaurante" [formControl]="toppings">
+      <mat-select class="select-restaurante" [formControl]="formsPrato">
         <mat-option
           class="option-restaurante"
-          *ngFor="let topping of toppingList"
-          [value]="topping"
-          >{{ topping }}</mat-option
+          *ngFor="let prato of listaPratos"
+          [value]="prato.codigo"
+          >{{ prato.principal }}</mat-option
         >
       </mat-select>
     </mat-form-field>
 
-    <button class="btn-cardapio" mat-raised-button (click)="openDialog()">Cardapio</button>
+    <button class="btn-cardapio" mat-raised-button (click)="onEntrarFila()">Cardapio</button>
   </div>
 
   <div class="container-numeroFila">

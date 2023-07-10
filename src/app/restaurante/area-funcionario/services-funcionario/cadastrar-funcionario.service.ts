@@ -11,14 +11,14 @@ export class CadastrarFuncionarioService {
 
   cadastraFuncionario(nome: string, dataAdmissao: string): Observable<any> {
     return this.http.post<any>(
-      `http://${environment.URL_REQ}:3005/funcionarios`,
+      `http://${environment.URL_PC_REMOTO}:3005/funcionarios`,
       { nome: nome, dataAdmissao: dataAdmissao }
     );
   }
 
   getFuncionarios(): Observable<any> {
     return this.http.get<any>(
-      `http://${environment.URL_REQ}:3005/funcionarios`
+      `http://${environment.URL_PC_REMOTO}:3005/funcionarios`
     );
   }
 }

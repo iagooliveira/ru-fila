@@ -10,7 +10,7 @@ export class AlunoServiceService {
   constructor(private http: HttpClient) {}
 
   cadastraAluno(matricula: string): Observable<any> {
-    return this.http.post<any>(`http://${environment.URL_REQ}:3005/alunos`, {
+    return this.http.post<any>(`http://${environment.URL_PC_REMOTO}:3005/alunos`, {
       matricula: matricula,
     });
   }

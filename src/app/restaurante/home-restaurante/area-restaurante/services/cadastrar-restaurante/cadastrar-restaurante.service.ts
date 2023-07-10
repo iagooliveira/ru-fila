@@ -11,7 +11,7 @@ export class CadastrarRestauranteService {
 
   cadastraRestaurante(nome: string): Observable<any> {
     return this.http.post<any>(
-      `http://${environment.URL_REQ}:3005/restaurantes`,
+      `http://${environment.URL_PC_REMOTO}:3005/restaurantes`,
       {
         nome: nome,
       }

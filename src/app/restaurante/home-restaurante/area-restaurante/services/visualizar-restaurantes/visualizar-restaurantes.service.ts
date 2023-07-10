@@ -12,7 +12,7 @@ export class VisualizarRestaurantesService {
   constructor(private http: HttpClient) {}
 
   getDados(): Observable<any> {
-    return this.http.get(`http://${environment.URL_REQ}:3005/restaurantes`);
+    return this.http.get(`http://${environment.URL_PC_REMOTO}:3005/restaurantes`);
   }
 
   vinculaFuncionarioRestaurante(
@@ -20,7 +20,7 @@ export class VisualizarRestaurantesService {
     funcionarioCodigo: number
   ): Observable<any> {
     return this.http.post<any>(
-      `http://${environment.URL_REQ}:3005/funcionario_restaurante`,
+      `http://${environment.URL_PC_REMOTO}:3005/funcionario_restaurante`,
       {
         restauranteCodigo: restauranteCodigo,
         funcionarioCodigo: funcionarioCodigo,

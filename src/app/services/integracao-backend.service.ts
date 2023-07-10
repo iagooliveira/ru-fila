@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
 })
 export class IntegracaoBackendService {
   constructor(private httpClient: HttpClient) {}
-  rotaIntegracao = `http://${environment.URL_REQ}:3005`;
+  rotaIntegracao = `http://${environment.URL_PC_REMOTO}:3005`;
 
   async divulgaCardapio(params) {
     await this.httpClient.post<any[]>(`${this.rotaIntegracao}/aluno`, params);
