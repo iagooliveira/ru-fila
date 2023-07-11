@@ -107,7 +107,7 @@ export class EntrarFilaComponent implements OnInit {
     }, 1400);
 
     this.snackBar.open(
-      `Entrou na fila! Posição: ${this.listaAlunoFila.length + 1}`,
+      `Entrou na fila! Ficha: ${this.listaAlunoFila.length + 1}`,
       'x',
       {
         duration: 6000,
