@@ -51,12 +51,14 @@
     <p class="label-numeroFila">Pessoas na fila:</p>
     <p class="num-fila">{{listaAlunoFila.length}}</p>
 
-    <button class="btn-sairFIla" (click)="onEntrarFila()" mat-raised-button>
+    <button class="btn-sairFila" (click)="onEntrarFila()" mat-raised-button>
       Entrar na Fila
     </button>
+
   </div>
 </section>
 
 <footer class="container-footer">
+  <app-botao-voltar style="position: relative; bottom: -86px; left: 112px;" [rota]="rotaVoltar" ></app-botao-voltar>
   <img class="imagem-footer" src="assets/footer.png" alt="" />
 </footer>

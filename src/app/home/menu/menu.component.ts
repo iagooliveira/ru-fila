@@ -18,4 +18,8 @@ export class MenuComponent implements OnInit {
   rotaTelaPrincipal(): void {
     void this.route.navigate(['']);
   }
+
+  rotaRestaurante(): void {
+    void this.route.navigate(['home-restaurante']);
+  }
 }

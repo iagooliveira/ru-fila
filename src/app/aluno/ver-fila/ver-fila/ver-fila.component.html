@@ -5,7 +5,8 @@
     <div class="container-imagem-logo">
       <img class="logo-ruFila" src="assets/logo.png" alt="" />
     </div>
-    <app-botao-voltar [rota]='rotaVoltar'></app-botao-voltar>
+    <p class="tempoAteProx">Tempo até o próximo: <span class="contador">{{contadorFila}}</span></p>
+    <app-botao-voltar [rota]='rotaVoltar' (click)="apagarIntervalo()"></app-botao-voltar>
     <div class="card-dados">
       <div class="container-input">
 

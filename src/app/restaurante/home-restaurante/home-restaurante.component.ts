@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HomeRestauranteComponent implements OnInit {
   constructor(private route: Router) {}
-  rotaVoltar = 'aluno-home';
+  rotaVoltar = 'home';
   // rota para o restaurante home-resutaurente, só olhar o no restaurente routing, o nome da pasta vai ser a rota
   ngOnInit(): void {}
 

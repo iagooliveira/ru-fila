@@ -4,7 +4,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { CardapioComponent } from '../cardapio/cardapio.component';
 import { EntrarFilaService } from '../services-entrar-fila/entrar-fila.service';
-import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
+import {
+  MatSnackBar,
+  MatSnackBarHorizontalPosition,
+  MatSnackBarVerticalPosition,
+} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-entrar-fila',
@@ -25,9 +29,14 @@ export class EntrarFilaComponent implements OnInit {
   formsRestaurante = new FormControl();
   formsAluno = new FormControl();
   formsPrato = new FormControl();
+  rotaVoltar = 'aluno-home';
 
-
-  constructor(private route: Router, public dialog: MatDialog, private entrarFilaService: EntrarFilaService, private snackBar: MatSnackBar,) {}
+  constructor(
+    private route: Router,
+    public dialog: MatDialog,
+    private entrarFilaService: EntrarFilaService,
+    private snackBar: MatSnackBar
+  ) {}
 
   ngOnInit(): void {
     const today = new Date();
@@ -46,7 +55,13 @@ export class EntrarFilaComponent implements OnInit {
       this.listaPratos = dados.data;
     });
     this.entrarFilaService.getUltimaPosicao().subscribe((dados) => {
-      this.ultimaPosicao1 = dados.data[0].ultimaPosicao;
+      if (!dados.data[0].ultimaPosicao) {
+        this.ultimaPosicao1 = 0;
+      } else {
+        this.ultimaPosicao1 = dados.data[0].ultimaPosicao;
+      }
+
+      console.log('ULTIMAPOS REQ!', this.ultimaPosicao1);
     });
     this.entrarFilaService.getFila().subscribe((dados) => {
       this.listaFila = dados.data;
@@ -58,45 +73,62 @@ export class EntrarFilaComponent implements OnInit {
 
   onEntrarFila() {
     this.ultimaPosicao1 = this.ultimaPosicao1 + 1;
+    console.log('ULTIMAPOS11', this.ultimaPosicao1);
     const idRestaurante = this.formsRestaurante.value;
     const idAluno = this.formsAluno.value;
-    const idPrato = this.formsPrato.value;
-    this.entrarFilaService.criarFila(idRestaurante, 30, this.ultimaPosicao1, this.currentDate).subscribe((dados) => {
-      //console.log(dados);
-  });
+    this.entrarFilaService
+      .criarFila(idRestaurante, 30, this.ultimaPosicao1, this.currentDate)
+      .subscribe((dados) => {
+        //console.log(dados);
+      });
 
-  setTimeout(() => {
-    this.entrarFilaService.getIdByUltimaPosicao(this.ultimaPosicao1).subscribe((dados) => {
-      this.codigoFila = dados.data[0].codigo;
-      //console.log(this.codigoFila);
-    });
-  }, 900);
- 
-  setTimeout(() => {
-  this.entrarFilaService.entrarFilaAluno(idAluno, this.codigoFila, this.ultimaPosicao1).subscribe((dados) => {
-    console.log('idAluno: ', idAluno, 'codigoDaFila: ', this.codigoFila, 'ultimaposicao: ',this.ultimaPosicao1);
-  });
-}, 1400);
+    setTimeout(() => {
+      this.entrarFilaService
+        .getIdByUltimaPosicao(this.ultimaPosicao1)
+        .subscribe((dados) => {
+          this.codigoFila = dados.data[0].codigo;
+          //console.log(this.codigoFila);
+        });
+    }, 900);
 
-  this.snackBar.open(`Entrou na fila! Posição: ${this.listaAlunoFila.length +1}`, 'x', {
-      duration: 6000,
+    setTimeout(() => {
+      this.entrarFilaService
+        .entrarFilaAluno(idAluno, this.codigoFila, this.ultimaPosicao1)
+        .subscribe((dados) => {
+          console.log(
+            'idAluno: ',
+            idAluno,
+            'codigoDaFila: ',
+            this.codigoFila,
+            'ultimaposicao: ',
+            this.ultimaPosicao1
+          );
+        });
+    }, 1400);
 
-      horizontalPosition: this.horizontalPosition,
-      verticalPosition: this.verticalPosition,
-    });
+    this.snackBar.open(
+      `Entrou na fila! Posição: ${this.listaAlunoFila.length + 1}`,
+      'x',
+      {
+        duration: 6000,
+
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      }
+    );
     setTimeout(() => {
       console.log(this.ultimaPosicao1);
       location.reload();
     }, 1350);
-}
-  
+  }
+
   rotaSairFila(): void {
     void this.route.navigate(['home']);
   }
 
-openDialog() {
-  console.log(this.listaAlunoFila.length);
-  void this.route.navigate(['ver-fila']);
+  openDialog() {
+    console.log(this.listaAlunoFila.length);
+    void this.route.navigate(['ver-fila']);
 
     // const dialogRef = this.dialog.open(CardapioComponent, {
     //   data: {

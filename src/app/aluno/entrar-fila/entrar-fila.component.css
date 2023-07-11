@@ -66,6 +66,7 @@
 }
 
 .container-numeroFila {
+  z-index: 199;
   background: #2644ea;
   margin-top: -5rem;
   width: 12rem;
@@ -89,13 +90,19 @@
 
 }
 
-.btn-sairFIla {
+.btn-sairFila {
   width: 4rem;
   font-family: "Poppins";
 
   width: 10rem;
   font-size: 0.7rem;
   margin-bottom: 0.5rem
+  
+}
+
+.btn-sairFila:hover {
+background-color: aqua;
+  
 }
 
 .label-numeroFila {
