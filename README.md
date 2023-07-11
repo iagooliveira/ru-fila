@@ -10,6 +10,8 @@
 
 # - RODAR O PROJETO NA BRANCH: feat/fila_iago. A MASTER ESTÁ DESATUALIZADA E NÃO DEVE SER USADA
 
+# - Após clonar o repositório, dar git checkout feat/fila_iago para ficar na branch correta
+
 - Após a preparação do ambiente, com o projeto baixado, siga para a execução:
   - Dentro da pasta do projeto, rode o comando `npm install` para baixar todas as dependências do projeto.
   - E por fim, rode o comando `npm start`
